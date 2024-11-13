@@ -240,15 +240,6 @@ JOIN idioma ON filme.idioma_id = idioma.idioma_id
 GROUP BY idioma.nome 
 
 #Exc 42: Qual a quantidade de atores que atuaram nos filmes do idioma “English”?
-
-#Metodo 1 :
-SELECT COUNT(ator_id) , idioma.nome
-FROM idioma
-JOIN ator ON ator_id = ator.ator_id
-WHERE idioma.nome LIKE 'English'
-GROUP BY idioma.nome
-
-#Metodo 2 :
 SELECT COUNT(DISTINCT fa.ator_id) AS numero_de_atores
 FROM idioma i
 JOIN filme f ON i.idioma_id = f.idioma_id
